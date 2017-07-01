@@ -35,7 +35,7 @@ function draw() {
 	newfreq = lowerfreq + ((angle/(2*PI)) * abs(upperfreq - lowerfreq));
 	
 	osc.freq(newfreq);
-	if (playing) osc.amp(1-(magn)/(width/2), 0.05);
+	if (playing) osc.amp(.5*(1-(magn)/(width/2)), 0.05);
 }
 
 function mouseClicked() {
