@@ -30,9 +30,12 @@ function draw() {
 	print(xdiff, ydiff);
 	
 	
+	magn = sqrt(pow(xdiff,2) + pow(ydiff,2));
 	angle = atan2(xdiff, ydiff);
 	newfreq = lowerfreq + ((angle/(2*PI)) * abs(upperfreq - lowerfreq));
+	
 	osc.freq(newfreq);
+	if (playing) osc.amp(1-(magn)/(width/2), 0.05);
 }
 
 function mouseClicked() {
